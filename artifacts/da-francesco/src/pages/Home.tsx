@@ -569,7 +569,7 @@ function Reservation() {
               </div>
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_time")}</label>
-                <input type="time" className={inputCls} value={form.time} onChange={e => set("time", e.target.value)} />
+                <input type="time" min="11:00" max="21:30" className={inputCls} value={form.time} onChange={e => set("time", e.target.value)} />
               </div>
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_guests")}</label>
