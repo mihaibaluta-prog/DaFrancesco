@@ -519,7 +519,7 @@ function Reservation() {
     }
   };
 
-  const inputCls = "w-full border border-border rounded px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-muted-foreground";
+  const inputCls = "w-full border border-border rounded px-4 py-3 text-sm text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-stone-400";
 
   return (
     <section id="reservation" className="py-24 bg-forest text-cream relative overflow-hidden">
