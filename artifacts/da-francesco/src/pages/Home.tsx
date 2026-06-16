@@ -522,7 +522,8 @@ function Reservation() {
   const inputCls = "w-full border border-border rounded px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-muted-foreground";
 
   return (
-    <section id="reservation" className="py-24 bg-[#f9f6f1] relative overflow-hidden">
+    <section id="reservation" className="py-24 bg-forest text-cream relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(/src/assets/photos/interior.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <div className="relative max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <div className="font-script text-gold text-2xl mb-3 flex items-center justify-center gap-3">
@@ -530,59 +531,59 @@ function Reservation() {
             {t("res_kicker")}
             <span className="flex-1 max-w-[80px] h-px bg-gold opacity-60" />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-stone-900">{t("res_title")}</h2>
-          <p className="mt-4 text-stone-600 max-w-xl mx-auto">{t("res_subtitle")}</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-cream">{t("res_title")}</h2>
+          <p className="mt-4 text-cream/75 max-w-xl mx-auto">{t("res_subtitle")}</p>
         </div>
 
         {status === "ok" ? (
-          <div className="bg-green-100 border border-green-400 rounded-xl p-10 text-center">
+          <div className="bg-green-800/60 border border-green-500/40 rounded-xl p-10 text-center">
             <div className="text-5xl mb-4">✅</div>
-            <p className="text-lg font-medium text-green-900">{t("res_success")}</p>
+            <p className="text-lg font-medium text-cream">{t("res_success")}</p>
           </div>
         ) : (
-          <form onSubmit={submit} className="bg-white border border-stone-200 shadow-md rounded-2xl p-8 md:p-10 space-y-5">
+          <form onSubmit={submit} className="bg-cream/10 backdrop-blur-sm border border-gold/20 rounded-2xl p-8 md:p-10 space-y-5">
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_firstname")} *</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_firstname")} *</label>
                 <input required className={inputCls} value={form.firstName} onChange={e => set("firstName", e.target.value)} placeholder={t("res_firstname")} />
               </div>
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_lastname")} *</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_lastname")} *</label>
                 <input required className={inputCls} value={form.lastName} onChange={e => set("lastName", e.target.value)} placeholder={t("res_lastname")} />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_phone")} *</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_phone")} *</label>
                 <input required type="tel" className={inputCls} value={form.phone} onChange={e => set("phone", e.target.value)} placeholder="+49 9307 440" />
               </div>
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_email")} *</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_email")} *</label>
                 <input required type="email" className={inputCls} value={form.email} onChange={e => set("email", e.target.value)} placeholder="email@example.com" />
               </div>
             </div>
             <div className="grid sm:grid-cols-3 gap-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_date")}</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_date")}</label>
                 <input type="date" className={inputCls} value={form.date} onChange={e => set("date", e.target.value)} />
               </div>
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_time")}</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_time")}</label>
                 <input type="time" className={inputCls} value={form.time} onChange={e => set("time", e.target.value)} />
               </div>
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_guests")}</label>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_guests")}</label>
                 <select className={inputCls} value={form.guests} onChange={e => set("guests", e.target.value)}>
                   {[1,2,3,4,5,6,7,8,9,10,11,12].map(n => <option key={n} value={n}>{n}</option>)}
                 </select>
               </div>
             </div>
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-widest text-stone-700 mb-2">{t("res_comments")}</label>
+              <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_comments")}</label>
               <textarea rows={4} className={inputCls} value={form.comments} onChange={e => set("comments", e.target.value)} placeholder={t("res_comments")} />
             </div>
             {status === "err" && (
-              <p className="text-red-600 text-sm text-center">{t("res_error")}</p>
+              <p className="text-red-300 text-sm text-center">{t("res_error")}</p>
             )}
             <button
               type="submit"
