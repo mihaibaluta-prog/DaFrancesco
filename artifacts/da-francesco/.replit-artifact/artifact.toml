@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Da Francesco Ristorante & Pizzeria"
+version = "1.0.0"
+id = "artifacts/da-francesco"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19532
+
+[services.development]
+run = "pnpm --filter @workspace/da-francesco run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/da-francesco", "run", "build" ]
+publicDir = "artifacts/da-francesco/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19532"
+BASE_PATH = "/"

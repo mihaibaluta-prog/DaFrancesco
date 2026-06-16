@@ -1,0 +1,130 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-burgundy: var(--burgundy);
+  --color-forest: var(--forest);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand colors */
+  --forest: oklch(0.42 0.09 152);
+  --burgundy: oklch(0.39 0.15 22);
+  --cream: oklch(0.96 0.018 85);
+  --gold: oklch(0.78 0.12 82);
+
+  --background: var(--cream);
+  --foreground: oklch(0.2 0.04 60);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.04 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.04 60);
+  --primary: var(--burgundy);
+  --primary-foreground: var(--cream);
+  --secondary: var(--forest);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0.92 0.01 80);
+  --muted-foreground: oklch(0.5 0.04 70);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.2 0.04 60);
+  --destructive: oklch(0.55 0.22 29);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.02 80);
+  --input: oklch(0.88 0.02 80);
+  --ring: var(--burgundy);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .gold-divider {
+    font-family: var(--font-script);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .gold-divider::before,
+  .gold-divider::after {
+    content: "";
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .shadow-elegant {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .shadow-card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.9s ease both;
+  }
+}
