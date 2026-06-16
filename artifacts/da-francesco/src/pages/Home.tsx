@@ -62,6 +62,7 @@ function Nav() {
     ["events", t("nav_events")],
     ["hours", t("nav_hours")],
     ["reviews", t("nav_reviews")],
+    ["reservation", t("nav_reservation")],
     ["contact", t("nav_contact")],
   ] as const;
   return (
@@ -496,6 +497,108 @@ function Footer() {
   );
 }
 
+function Reservation() {
+  const { t } = useI18n();
+  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", email: "", date: "", time: "", guests: "2", comments: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
+
+  const set = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }));
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      setStatus(res.ok ? "ok" : "err");
+    } catch {
+      setStatus("err");
+    }
+  };
+
+  const inputCls = "w-full border border-border rounded px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-muted-foreground";
+
+  return (
+    <section id="reservation" className="py-24 bg-forest text-cream relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(/src/assets/photos/interior.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }} />
+      <div className="relative max-w-3xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <div className="font-script text-gold text-2xl mb-3 flex items-center justify-center gap-3">
+            <span className="flex-1 max-w-[80px] h-px bg-gold opacity-60" />
+            {t("res_kicker")}
+            <span className="flex-1 max-w-[80px] h-px bg-gold opacity-60" />
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-cream">{t("res_title")}</h2>
+          <p className="mt-4 text-cream/75 max-w-xl mx-auto">{t("res_subtitle")}</p>
+        </div>
+
+        {status === "ok" ? (
+          <div className="bg-green-800/60 border border-green-500/40 rounded-xl p-10 text-center">
+            <div className="text-5xl mb-4">✅</div>
+            <p className="text-lg font-medium text-cream">{t("res_success")}</p>
+          </div>
+        ) : (
+          <form onSubmit={submit} className="bg-cream/10 backdrop-blur-sm border border-gold/20 rounded-2xl p-8 md:p-10 space-y-5">
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_firstname")} *</label>
+                <input required className={inputCls} value={form.firstName} onChange={e => set("firstName", e.target.value)} placeholder={t("res_firstname")} />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_lastname")} *</label>
+                <input required className={inputCls} value={form.lastName} onChange={e => set("lastName", e.target.value)} placeholder={t("res_lastname")} />
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_phone")} *</label>
+                <input required type="tel" className={inputCls} value={form.phone} onChange={e => set("phone", e.target.value)} placeholder="+49 9307 440" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_email")} *</label>
+                <input required type="email" className={inputCls} value={form.email} onChange={e => set("email", e.target.value)} placeholder="email@example.com" />
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-5">
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_date")}</label>
+                <input type="date" className={inputCls} value={form.date} onChange={e => set("date", e.target.value)} />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_time")}</label>
+                <input type="time" className={inputCls} value={form.time} onChange={e => set("time", e.target.value)} />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_guests")}</label>
+                <select className={inputCls} value={form.guests} onChange={e => set("guests", e.target.value)}>
+                  {[1,2,3,4,5,6,7,8,9,10,11,12].map(n => <option key={n} value={n}>{n}</option>)}
+                </select>
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_comments")}</label>
+              <textarea rows={4} className={inputCls} value={form.comments} onChange={e => set("comments", e.target.value)} placeholder={t("res_comments")} />
+            </div>
+            {status === "err" && (
+              <p className="text-red-300 text-sm text-center">{t("res_error")}</p>
+            )}
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full bg-burgundy hover:bg-burgundy/90 disabled:opacity-60 text-cream font-semibold py-4 rounded-lg tracking-wide transition-all hover:scale-[1.02] shadow-elegant text-base"
+            >
+              {status === "sending" ? t("res_sending") : t("res_submit")}
+            </button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function Home() {
   return (
     <div className="min-h-screen bg-cream">
@@ -509,6 +612,7 @@ function Home() {
         <Hours />
         <Reviews />
         <Gallery />
+        <Reservation />
         <Contact />
       </main>
       <Footer />
