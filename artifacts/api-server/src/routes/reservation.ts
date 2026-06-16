@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 const router = Router();
 
-const RECIPIENT = "mihaibaluta65@gmail.com";
+const RECIPIENT = "mihaibaluta65@gmail.com, rambocaputo79@gmail.com";
 
 function buildTransport() {
   const user = process.env.SMTP_USER;
