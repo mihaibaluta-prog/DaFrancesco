@@ -492,6 +492,9 @@ function Footer() {
         <div className="font-display text-2xl text-cream mb-2">Da <span className="text-gold">Francesco</span></div>
         <p className="text-sm">{ADDRESS} · {PHONE_HUMAN}</p>
         <p className="text-xs mt-4 text-cream/50">© {new Date().getFullYear()} Da Francesco Ristorante & Pizzeria. {t("footer_rights")}</p>
+        <div className="mt-3 flex items-center justify-center gap-4 text-xs text-cream/40">
+          <a href="#datenschutz" className="hover:text-gold transition-colors">Datenschutzerklärung</a>
+        </div>
       </div>
     </footer>
   );
