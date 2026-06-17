@@ -493,7 +493,22 @@ function Footer() {
         <p className="text-sm">{ADDRESS} · {PHONE_HUMAN}</p>
         <p className="text-xs mt-4 text-cream/50">© {new Date().getFullYear()} Da Francesco Ristorante & Pizzeria. {t("footer_rights")}</p>
         <div className="mt-3 flex items-center justify-center gap-4 text-xs text-cream/40">
-          <a href="#datenschutz" className="hover:text-gold transition-colors">Datenschutzerklärung</a>
+          <div className="mt-3 flex items-center justify-center gap-4 text-xs text-cream/40">
+  <a
+    href="#impressum"
+    className="hover:text-gold transition-colors"
+  >
+    Impressum
+  </a>
+
+  <span>|</span>
+
+  <a
+    href="#datenschutz"
+    className="hover:text-gold transition-colors"
+  >
+    Datenschutzerklärung
+  </a>
         </div>
       </div>
     </footer>
