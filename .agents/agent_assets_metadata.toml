@@ -24,3 +24,9 @@ id = "LblGjKjBjG5e9-p5TYedQ"
 uri = "file://workspace-sursa.zip"
 type = "unspecified"
 title = "workspace-sursa.zip — Workspace complet (10.9 MB, 261 fișiere)"
+
+[[outputs]]
+id = "iAo2ZEx1vLp2G_vxLzRfz"
+uri = "file://github-pages-dist.zip"
+type = "unspecified"
+title = "github-pages-dist.zip — Fișiere gata pentru GitHub Pages (2.1 MB)"

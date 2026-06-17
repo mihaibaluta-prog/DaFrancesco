@@ -508,7 +508,7 @@ function Reservation() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/reservation", {
+      const res = await fetch("https://lovable-project--mihaibaluta65.replit.app/api/reservation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
