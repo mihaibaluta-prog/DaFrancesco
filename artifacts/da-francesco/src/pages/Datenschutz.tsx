@@ -1,6 +1,6 @@
 const RESTAURANT = "Da Francesco Ristorante & Pizzeria";
 const ADDRESS = "Oberes Tor 14, 97237 Altertheim-Oberaltertheim";
-const EMAIL = "mihaibaluta65@gmail.com";
+const EMAIL = "rambocaputo79@gmail.com";
 const PHONE = "09307 440";
 const TODAY = new Date().toLocaleDateString("de-DE", { year: "numeric", month: "long", day: "numeric" });
 
