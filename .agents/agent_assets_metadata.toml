@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "W8_1RRKmPddCLHlmf8pHg"
+uri = "file://da-francesco-site.zip"
+type = "unspecified"
+title = "da-francesco-site.zip"
