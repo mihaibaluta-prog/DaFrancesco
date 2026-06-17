@@ -12,3 +12,9 @@ id = "na2i5YtpZLTb0b8NXv7X4"
 uri = "file://workspace-full.tar.gz"
 type = "unspecified"
 title = "workspace-full.tar.gz — Workspace complet"
+
+[[outputs]]
+id = "SrwiY_2ffOtvtw_ejjrwm"
+uri = "file://da-francesco-cod-sursa.zip"
+type = "unspecified"
+title = "da-francesco-cod-sursa.zip — Cod sursă complet (2.1 MB)"
