@@ -6,3 +6,9 @@ id = "W8_1RRKmPddCLHlmf8pHg"
 uri = "file://da-francesco-site.zip"
 type = "unspecified"
 title = "da-francesco-site.zip"
+
+[[outputs]]
+id = "na2i5YtpZLTb0b8NXv7X4"
+uri = "file://workspace-full.tar.gz"
+type = "unspecified"
+title = "workspace-full.tar.gz — Workspace complet"
