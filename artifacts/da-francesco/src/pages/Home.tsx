@@ -153,12 +153,6 @@ function Hero() {
             ☎ {t("cta_call")}
           </a>
         </div>
-        <a
-  href="https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex flex-col items-center hover:scale-105 transition-transform"
->
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
           <span className="flex items-center gap-1.5"><span className="text-gold text-lg">★</span> 4.4 Google</span>
           <span>📝 212 Bewertungen</span>
