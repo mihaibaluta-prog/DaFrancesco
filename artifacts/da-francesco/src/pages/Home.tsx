@@ -18,6 +18,7 @@ const PHONE_HUMAN = "09307 440";
 const ADDRESS = "Oberes Tor 14, 97237 Altertheim-Oberaltertheim";
 const MAPS_LINK = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(ADDRESS);
 const MAPS_EMBED = "https://www.google.com/maps?q=" + encodeURIComponent(ADDRESS) + "&output=embed";
+const GOOGLE_REVIEWS_LINK = "https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim";
 
 // Hours: 0=Sun ... 6=Sat. null = closed.
 const HOURS: Record<number, [number, number] | null> = {
@@ -153,12 +154,19 @@ function Hero() {
             ☎ {t("cta_call")}
           </a>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
-          <span className="flex items-center gap-1.5"><span className="text-gold text-lg">★</span> 4.4 Google</span>
+        <a
+          href={GOOGLE_REVIEWS_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85 hover:scale-105 transition-transform"
+        >
+          <span className="flex items-center gap-1.5">
+            <span className="text-gold text-lg">★</span> 4.4 Google
+          </span>
           <span>📝 212 Bewertungen</span>
           <span className="hidden md:inline">📍 {ADDRESS}</span>
           <span>📞 {PHONE_HUMAN}</span>
-        </div>
+        </a>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/60 animate-bounce">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
@@ -195,8 +203,15 @@ function About() {
           <p className="text-lg leading-relaxed text-muted-foreground mb-8">{t("about_text")}</p>
           <div className="flex items-center gap-6 border-t border-border pt-6">
             <div>
-              <div className="font-display text-4xl font-bold text-burgundy">4.4<span className="text-gold">★</span></div>
-              <div className="text-sm text-muted-foreground">Google Rating</div>
+              <a
+                href={GOOGLE_REVIEWS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:scale-105 transition-transform"
+              >
+                <div className="font-display text-4xl font-bold text-burgundy">4.4<span className="text-gold">★</span></div>
+                <div className="text-sm text-muted-foreground underline">Google Rating</div>
+              </a>
             </div>
             <div className="h-12 w-px bg-border" />
             <div>
@@ -389,21 +404,21 @@ function Reviews() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader kicker={t("reviews_kicker")} title={t("reviews_title")} />
         <div className="text-center mb-12">
-        <a
-  href="https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex flex-col items-center hover:scale-105 transition-transform"
->
-  <div className="flex items-center gap-2 bg-burgundy text-white px-4 py-2 rounded-lg hover:opacity-90 transition">
-    <span className="font-display text-4xl font-bold">4.4</span>
-    <span className="text-gold text-2xl">★★★★★</span>
-  </div>
+          <a
+            href={GOOGLE_REVIEWS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-col items-center hover:scale-105 transition-transform"
+          >
+            <div className="flex items-center gap-2 bg-burgundy text-white px-4 py-2 rounded-lg hover:opacity-90 transition">
+              <span className="font-display text-4xl font-bold">4.4</span>
+              <span className="text-gold text-2xl">★★★★★</span>
+            </div>
 
-  <p className="text-muted-foreground mt-2 underline">
-    {t("reviews_based")}
-  </p>
-</a>
+            <p className="text-muted-foreground mt-2 underline">
+              {t("reviews_based")}
+            </p>
+          </a>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
