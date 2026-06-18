@@ -389,11 +389,23 @@ function Reviews() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader kicker={t("reviews_kicker")} title={t("reviews_title")} />
         <div className="text-center mb-12">
-          <div className="inline-flex items-baseline gap-2">
-            <span className="font-display text-6xl font-bold text-burgundy">4.4</span>
-            <span className="text-3xl text-gold">★★★★★</span>
-          </div>
-          <p className="text-muted-foreground mt-2">{t("reviews_based")}</p>
+         <a
+  href="https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex flex-col items-center hover:scale-105 transition-transform"
+>
+  <div className="inline-flex items-baseline gap-2">
+    <span className="font-display text-6xl font-bold text-burgundy">
+      4.4
+    </span>
+    <span className="text-3xl text-gold">★★★★★</span>
+  </div>
+
+  <p className="text-muted-foreground mt-2 underline">
+    {t("reviews_based")}
+  </p>
+</a>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
