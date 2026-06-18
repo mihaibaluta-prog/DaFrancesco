@@ -104,7 +104,7 @@ export default function Impressum() {
             </h2>
 
             <p>
-              Eine Umsatzsteuer-Identifikationsnummer ist derzeit nicht angegeben.
+              Die Umsatzsteuer-Identifikationsnummer kann auf Anfrage zur Verfügung gestellt werden.
             </p>
           </section>
 
