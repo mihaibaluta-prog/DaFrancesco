@@ -146,13 +146,25 @@ function Hero() {
           {t("hero_subtitle")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a href="#reservation" onClick={e => { e.preventDefault(); document.getElementById("reservation")?.scrollIntoView({ behavior: "smooth" }); }} className="inline-flex items-center gap-2 bg-burgundy hover:bg-burgundy/90 text-cream px-8 py-4 rounded font-semibold tracking-wide transition-all hover:scale-105 shadow-elegant">
-            🍽 {t("cta_reserve")}
-          </a>
-          <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-8 py-4 rounded font-semibold tracking-wide transition-all">
-            ☎ {t("cta_call")}
-          </a>
-        </div>
+         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+  <a
+    href="#reservation"
+    onClick={(e) => {
+      e.preventDefault();
+      document.getElementById("reservation")?.scrollIntoView({ behavior: "smooth" });
+    }}
+    className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-6 py-3 transition-colors"
+  >
+    🍽️ {t("cta_reserve")}
+  </a>
+
+  <a
+    href={`tel:${PHONE}`}
+    className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-6 py-3 transition-colors"
+  >
+    ☎ {t("cta_call")}
+  </a>
+</div>
 <button
   type="button"
   onClick={() =>
