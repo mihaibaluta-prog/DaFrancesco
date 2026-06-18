@@ -21,7 +21,7 @@ const translations: Record<Lang, Dict> = {
     about_kicker: "La nostra storia",
     about_title: "Italienische Tradition & Authentischer Geschmack",
     about_text:
-      "Im Da Francesco Ristorante & Pizzeria bereiten wir Gerichte zu, die von der italienischen Kochtradition inspiriert sind. Wir verwenden sorgfältig ausgewählte Zutaten, um authentische Pizza, frische Pasta und mediterrane Spezialitäten in einer einladenden und eleganten Atmosphäre zu servieren.",
+      "Im Da Francesco Ristorante & Pizzeria bereiten wir Gerichte zu, die von der italienischen Kochtradition inspiriert sind. Wir verwenden sorgfältig ausgewählte Zutaten, um authentische Pizza, Pasta und mediterrane Spezialitäten in einer einladenden und eleganten Atmosphäre zu servieren.",
     why_title: "Warum Da Francesco?",
     why_1_t: "Authentische italienische Küche",
     why_1_d: "Rezepte aus der echten italienischen Tradition.",
@@ -89,7 +89,7 @@ const translations: Record<Lang, Dict> = {
     about_kicker: "La nostra storia",
     about_title: "Tradizione Italiana e Gusto Autentico",
     about_text:
-      "Da Francesco Ristorante & Pizzeria prepariamo piatti ispirati alla tradizione culinaria italiana. Usiamo ingredienti accuratamente selezionati per offrire pizza autentica, pasta fresca e specialità mediterranee in un'atmosfera accogliente ed elegante.",
+      "Da Francesco Ristorante & Pizzeria prepariamo piatti ispirati alla tradizione culinaria italiana. Usiamo ingredienti accuratamente selezionati per offrire pizza autentica, pasta e specialità mediterranee in un'atmosfera accogliente ed elegante.",
     why_title: "Perché sceglierci",
     why_1_t: "Cucina italiana autentica",
     why_1_d: "Ricette dalla vera tradizione italiana.",
@@ -157,7 +157,7 @@ const translations: Record<Lang, Dict> = {
     about_kicker: "Our story",
     about_title: "Italian Tradition & Authentic Flavor",
     about_text:
-      "At Da Francesco Ristorante & Pizzeria we prepare dishes inspired by Italian culinary tradition. We use carefully selected ingredients to offer authentic pizza, fresh pasta and Mediterranean specialties in a welcoming and elegant atmosphere.",
+      "At Da Francesco Ristorante & Pizzeria we prepare dishes inspired by Italian culinary tradition. We use carefully selected ingredients to offer authentic pizza, pasta and Mediterranean specialties in a welcoming and elegant atmosphere.",
     why_title: "Why choose us",
     why_1_t: "Authentic Italian cuisine",
     why_1_d: "Recipes from real Italian tradition.",
