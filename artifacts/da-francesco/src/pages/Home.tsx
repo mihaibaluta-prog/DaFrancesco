@@ -554,7 +554,7 @@ function Reservation() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("https://formspree.io/f/xpqegwak", {
+      const res = await fetch("https://formspree.io/f/xpqegwwk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
