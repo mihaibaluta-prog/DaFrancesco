@@ -153,19 +153,28 @@ function Hero() {
             ☎ {t("cta_call")}
           </a>
         </div>
-        <a
-  href="https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim"
-  target="_blank"
-  rel="noopener noreferrer"
+<button
+  type="button"
+  onClick={() =>
+    window.open(
+      "https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim",
+      "_blank",
+      "noopener,noreferrer"
+    )
+  }
   className="inline-flex flex-col items-center hover:scale-105 transition-transform"
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
-          <span className="flex items-center gap-1.5"><span className="text-gold text-lg">★</span> 4.4 Google</span>
-          <span>📝 212 Bewertungen</span>
-          <span className="hidden md:inline">📍 {ADDRESS}</span>
-          <span>📞 {PHONE_HUMAN}</span>
-        </div>
-      </div>
-       </a>
+>
+  <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
+    <span className="flex items-center gap-1.5">
+      <span className="text-gold text-lg">★</span>
+      4.4 Google
+    </span>
+    <span>212 Bewertungen</span>
+    <span className="hidden md:inline">•</span>
+    <span>📍 {ADDRESS}</span>
+    <span>📞 {PHONE_HUMAN}</span>
+  </div>
+</button>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/60 animate-bounce">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
       </div>
