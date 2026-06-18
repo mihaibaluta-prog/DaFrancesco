@@ -402,10 +402,23 @@ function Reviews() {
   className="inline-flex flex-col items-center hover:scale-105 transition-transform"
 >
   <div className="inline-flex items-baseline gap-2">
-    <span className="font-display text-6xl font-bold text-burgundy">
-      4.4
-    </span>
-    <span className="text-3xl text-gold">★★★★★</span>
+   <button
+  onClick={() =>
+    window.open(
+      "https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim",
+      "_blank"
+    )
+  }
+  className="flex items-center gap-2 bg-burgundy text-white px-4 py-2 rounded-lg hover:opacity-90 transition"
+>
+  <span className="font-display text-4xl font-bold">
+    4.4
+  </span>
+
+  <span className="text-gold text-2xl">
+    ★★★★★
+  </span>
+</button>
   </div>
 
   <p className="text-muted-foreground mt-2 underline">
