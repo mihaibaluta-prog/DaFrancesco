@@ -652,7 +652,7 @@ const timeLimits = getTimeLimits();
   <p className="text-red-300 text-xs mt-2">
     Restaurantul este închis luni și marți.
   </p>
-)} />
+)}
               </div>
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_guests")}</label>
