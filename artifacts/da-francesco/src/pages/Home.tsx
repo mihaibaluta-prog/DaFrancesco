@@ -389,30 +389,15 @@ function Reviews() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader kicker={t("reviews_kicker")} title={t("reviews_title")} />
         <div className="text-center mb-12">
-         <a
+        <a
   href="https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex flex-col items-center hover:scale-105 transition-transform"
 >
-  <div className="inline-flex items-baseline gap-2">
-   <button
-  onClick={() =>
-    window.open(
-      "https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim",
-      "_blank"
-    )
-  }
-  className="flex items-center gap-2 bg-burgundy text-white px-4 py-2 rounded-lg hover:opacity-90 transition"
->
-  <span className="font-display text-4xl font-bold">
-    4.4
-  </span>
-
-  <span className="text-gold text-2xl">
-    ★★★★★
-  </span>
-</button>
+  <div className="flex items-center gap-2 bg-burgundy text-white px-4 py-2 rounded-lg hover:opacity-90 transition">
+    <span className="font-display text-4xl font-bold">4.4</span>
+    <span className="text-gold text-2xl">★★★★★</span>
   </div>
 
   <p className="text-muted-foreground mt-2 underline">
