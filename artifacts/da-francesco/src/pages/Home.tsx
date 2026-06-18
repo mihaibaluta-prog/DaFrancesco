@@ -133,50 +133,39 @@ function Hero() {
   const { t } = useI18n();
   return (
     <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-  <a
-    href="#reservation"
-    onClick={(e) => {
-      e.preventDefault();
-      document
-        .getElementById("reservation")
-        ?.scrollIntoView({ behavior: "smooth" });
-    }}
-    className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-6 py-3 transition-colors"
-  >
-    🍽️ {t("cta_reserve")}
-  </a>
-
-  <a
-    href={`tel:${PHONE}`}
-    className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-6 py-3 transition-colors"
-  >
-    ☎ {t("cta_call")}
-  </a>
-</div>
-
-<button
-  type="button"
-  onClick={() =>
-    window.open(
-      "https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim",
-      "_blank",
-      "noopener,noreferrer"
-    )
-  }
+      <div className="absolute inset-0">
+        <img src={heroPizza} alt="Authentische italienische Pizza" className="w-full h-full object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
+      </div>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream animate-fade-up">
+        <div className="gold-divider text-2xl mb-6">Ristorante & Pizzeria</div>
+        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+          {t("hero_title")}
+        </h1>
+        <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 text-cream/90">
+          {t("hero_subtitle")}
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <a href="#reservation" onClick={e => { e.preventDefault(); document.getElementById("reservation")?.scrollIntoView({ behavior: "smooth" }); }} className="inline-flex items-center gap-2 bg-burgundy hover:bg-burgundy/90 text-cream px-8 py-4 rounded font-semibold tracking-wide transition-all hover:scale-105 shadow-elegant">
+            🍽 {t("cta_reserve")}
+          </a>
+          <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-8 py-4 rounded font-semibold tracking-wide transition-all">
+            ☎ {t("cta_call")}
+          </a>
+        </div>
+        <a
+  href="https://maps.google.com/?q=Da+Francesco+Ristorante+%26+Pizzeria+Altertheim"
+  target="_blank"
+  rel="noopener noreferrer"
   className="inline-flex flex-col items-center hover:scale-105 transition-transform"
 >
-  <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
-    <span className="flex items-center gap-1.5">
-      <span className="text-gold text-lg">★</span>
-      4.4 Google
-    </span>
-    <span>212 Bewertungen</span>
-    <span className="hidden md:inline">•</span>
-    <span>📍 {ADDRESS}</span>
-    <span>📞 {PHONE_HUMAN}</span>
-  </div>
-</button>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
+          <span className="flex items-center gap-1.5"><span className="text-gold text-lg">★</span> 4.4 Google</span>
+          <span>📝 212 Bewertungen</span>
+          <span className="hidden md:inline">📍 {ADDRESS}</span>
+          <span>📞 {PHONE_HUMAN}</span>
+        </div>
+      </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/60 animate-bounce">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
       </div>
