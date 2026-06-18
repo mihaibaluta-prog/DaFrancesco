@@ -133,20 +133,7 @@ function Hero() {
   const { t } = useI18n();
   return (
     <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroPizza} alt="Authentische italienische Pizza" className="w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
-      </div>
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream animate-fade-up">
-        <div className="gold-divider text-2xl mb-6">Ristorante & Pizzeria</div>
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-          {t("hero_title")}
-        </h1>
-        <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 text-cream/90">
-          {t("hero_subtitle")}
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
   <a
     href="#reservation"
     onClick={(e) => {
@@ -165,6 +152,7 @@ function Hero() {
     ☎ {t("cta_call")}
   </a>
 </div>
+
 <button
   type="button"
   onClick={() =>
