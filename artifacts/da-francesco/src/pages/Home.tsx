@@ -193,7 +193,7 @@ function About() {
           <img src={interior} alt="Restaurant interior" className="rounded-lg shadow-elegant w-full h-[500px] object-cover" loading="lazy" />
           <div className="absolute -bottom-8 -right-4 md:-right-8 bg-burgundy text-cream p-6 md:p-8 rounded-lg shadow-elegant max-w-[240px]">
             <div className="font-script text-gold text-2xl mb-1">since</div>
-            <div className="font-display text-4xl md:text-5xl font-bold">Tradizione</div>
+            <div className="font-display text-3xl md:text-4xl font-bold">Tradizione</div>
             <div className="text-sm mt-2 text-cream/80">Italiana autentica</div>
           </div>
         </div>
