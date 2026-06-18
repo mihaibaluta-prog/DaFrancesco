@@ -564,7 +564,30 @@ function Reservation() {
       setStatus("err");
     }
   };
+const getTimeLimits = () => {
+  if (!form.date) {
+    return { min: "11:00", max: "21:30", closed: false };
+  }
 
+  const day = new Date(form.date).getDay();
+
+  switch (day) {
+    case 1: // Luni
+    case 2: // Marți
+      return { min: "", max: "", closed: true };
+
+    case 0: // Duminică
+      return { min: "11:00", max: "21:30", closed: false };
+
+    case 6: // Sâmbătă
+      return { min: "14:00", max: "21:30", closed: false };
+
+    default: // Miercuri-Vineri
+      return { min: "16:00", max: "21:30", closed: false };
+  }
+};
+
+const timeLimits = getTimeLimits();
   const inputCls = "w-full border border-border rounded px-4 py-3 text-sm text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-stone-400";
 
   return (
@@ -615,7 +638,21 @@ function Reservation() {
               </div>
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_time")}</label>
-                <input type="time" min="11:00" max="21:30" className={inputCls} value={form.time} onChange={e => set("time", e.target.value)} />
+                <input
+  type="time"
+  min={timeLimits.min}
+  max={timeLimits.max}
+  disabled={timeLimits.closed}
+  className={inputCls}
+  value={form.time}
+  onChange={e => set("time", e.target.value)}
+/>
+
+{timeLimits.closed && (
+  <p className="text-red-300 text-xs mt-2">
+    Restaurantul este închis luni și marți.
+  </p>
+)} />
               </div>
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_guests")}</label>
