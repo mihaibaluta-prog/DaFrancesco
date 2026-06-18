@@ -143,7 +143,7 @@ function Hero() {
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
           {t("hero_title")}
         </h1>
-        <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 text-cream/50">
+        <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 text-cream/120">
           {t("hero_subtitle")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
