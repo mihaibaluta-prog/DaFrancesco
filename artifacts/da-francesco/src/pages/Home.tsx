@@ -133,12 +133,14 @@ function Hero() {
   const { t } = useI18n();
   return (
     <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
   <a
     href="#reservation"
     onClick={(e) => {
       e.preventDefault();
-      document.getElementById("reservation")?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById("reservation")
+        ?.scrollIntoView({ behavior: "smooth" });
     }}
     className="inline-flex items-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-forest px-6 py-3 transition-colors"
   >
