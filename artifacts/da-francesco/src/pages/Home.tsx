@@ -440,7 +440,7 @@ function Gallery() {
     { src: exterior, label: "Da Francesco" },
     { src: pizzaProsciutto, label: "Pizza" },
     { src: carpaccio, label: "Carpaccio" },
-    { src: antipasto, label: "Antipasti" },
+    { src: antipasto, label: "Antipasto italiano" },
     { src: vegetables, label: "Antipasto di verdure" },
     { src: pasta, label: "Pasta" },
   ];
