@@ -5,7 +5,7 @@ import { menuCategories } from "@/lib/menu-data";
 import heroPizza from "@/assets/photos/hero-pizza.jpg";
 import exterior from "@/assets/photos/exterior.jpeg";
 import interior from "@/assets/photos/interior.jpg";
-import pasta from "@/assets/photos/pasta.jpg";
+import spargelsnitzel from "@/assets/photos/spargelsnitzel.jpeg";
 import wine from "@/assets/photos/wine.jpg";
 import salat from "@/assets/photos/salat.jpeg";
 import vegetables from "@/assets/photos/vegetables.png";
@@ -442,7 +442,7 @@ function Gallery() {
     { src: salat, label: "Salat Pollo" },
     { src: antipasto, label: "Antipasto italiano" },
     { src: vegetables, label: "Antipasto di verdure" },
-    { src: pasta, label: "Pasta" },
+    { src: spargelsnitzel, label: "Spargel Snitzel" },
   ];
   return (
     <section className="py-24 bg-cream">
