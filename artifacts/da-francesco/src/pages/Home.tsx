@@ -7,7 +7,7 @@ import exterior from "@/assets/photos/exterior.jpeg";
 import interior from "@/assets/photos/interior.jpg";
 import pasta from "@/assets/photos/pasta.jpg";
 import wine from "@/assets/photos/wine.jpg";
-import carpaccio from "@/assets/photos/carpaccio.jpeg";
+import carpaccio from "@/assets/photos/salat.jpeg";
 import vegetables from "@/assets/photos/vegetables.png";
 import antipasto from "@/assets/photos/antipasto.png";
 import pizzaProsciutto from "@/assets/photos/pizza.jpeg";
@@ -331,7 +331,7 @@ function Events() {
           <img src={antipasto} alt="" className="rounded-lg shadow-card w-full h-64 object-cover" loading="lazy" />
           <img src={wine} alt="" className="rounded-lg shadow-card w-full h-64 object-cover mt-8" loading="lazy" />
           <img src={vegetables} alt="" className="rounded-lg shadow-card w-full h-64 object-cover -mt-8" loading="lazy" />
-          <img src={carpaccio} alt="" className="rounded-lg shadow-card w-full h-64 object-cover" loading="lazy" />
+          <img src={salat} alt="" className="rounded-lg shadow-card w-full h-64 object-cover" loading="lazy" />
         </div>
       </div>
     </section>
@@ -439,7 +439,7 @@ function Gallery() {
   const imgs = [
     { src: exterior, label: "Da Francesco" },
     { src: pizzaProsciutto, label: "Pizza" },
-    { src: carpaccio, label: "Carpaccio" },
+    { src: salat, label: "Salat Pollo" },
     { src: antipasto, label: "Antipasto italiano" },
     { src: vegetables, label: "Antipasto di verdure" },
     { src: pasta, label: "Pasta" },
