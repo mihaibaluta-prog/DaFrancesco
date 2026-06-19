@@ -1,6 +1,6 @@
 const RESTAURANT = "Da Francesco Ristorante & Pizzeria";
 const OWNER = "Francesco Caputo";
-const ADDRESS = "Oberes Tor 14, 97237 Altertheim";
+const ADDRESS = "Oberes Tor 14, 97237 Altertheim-Oberaltertheim";
 const EMAIL = "rambocaputo79@gmail.com";
 const PHONE = "09307 440";
 
@@ -34,50 +34,27 @@ export default function Impressum() {
       </header>
 
       <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-forest mb-3">
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-forest mb-12">
           Impressum
         </h1>
 
         <div className="prose prose-stone max-w-none space-y-10 text-stone-800">
-
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              Angaben gemäß § 5 DDG
+              Angaben gemäß § 5 TMG
             </h2>
 
-            <address className="not-italic mt-3 bg-stone-100 rounded-lg p-4 text-sm leading-7">
+            <address className="not-italic bg-stone-100 rounded-lg p-4 text-sm leading-7">
               <strong>{RESTAURANT}</strong>
               <br />
               Inhaber: {OWNER}
               <br />
               Oberes Tor 14
               <br />
-              97237 Altertheim
+              97237 Altertheim-Oberaltertheim
               <br />
               Deutschland
-              <br />
-              Telefon: {PHONE}
-              <br />
-              E-Mail:{" "}
-              <a
-                href={`mailto:${EMAIL}`}
-                className="text-burgundy underline"
-              >
-                {EMAIL}
-              </a>
             </address>
-          </section>
-
-          <section>
-            <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              Vertreten durch
-            </h2>
-
-            <p>
-              {OWNER}
-              <br />
-              Inhaber von {RESTAURANT}
-            </p>
           </section>
 
           <section>
@@ -86,13 +63,13 @@ export default function Impressum() {
             </h2>
 
             <p>
-              Telefon: {PHONE}
+              Telefon:{" "}
+              <a href={`tel:${PHONE}`} className="text-burgundy underline">
+                {PHONE}
+              </a>
               <br />
               E-Mail:{" "}
-              <a
-                href={`mailto:${EMAIL}`}
-                className="text-burgundy underline"
-              >
+              <a href={`mailto:${EMAIL}`} className="text-burgundy underline">
                 {EMAIL}
               </a>
             </p>
@@ -100,25 +77,13 @@ export default function Impressum() {
 
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              Umsatzsteuer-ID
-            </h2>
-
-            <p>
-              Die Umsatzsteuer-Identifikationsnummer kann auf Anfrage zur Verfügung gestellt werden.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </h2>
 
             <p>
               {OWNER}
               <br />
-              Oberes Tor 14
-              <br />
-              97237 Altertheim
+              {ADDRESS}
               <br />
               Deutschland
             </p>
@@ -130,9 +95,11 @@ export default function Impressum() {
             </h2>
 
             <p>
-              Die Inhalte unserer Website wurden mit größter Sorgfalt erstellt.
-              Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
-              übernehmen wir jedoch keine Gewähr.
+              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene
+              Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+              verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht
+              verpflichtet, übermittelte oder gespeicherte fremde Informationen
+              zu überwachen.
             </p>
           </section>
 
@@ -142,9 +109,9 @@ export default function Impressum() {
             </h2>
 
             <p>
-              Unsere Website enthält Links zu externen Websites Dritter.
-              Auf deren Inhalte haben wir keinen Einfluss. Deshalb können wir
-              für diese fremden Inhalte keine Gewähr übernehmen.
+              Unser Angebot enthält Links zu externen Websites Dritter, auf
+              deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte
+              übernehmen wir keine Gewähr.
             </p>
           </section>
 
@@ -155,23 +122,16 @@ export default function Impressum() {
 
             <p>
               Die durch den Seitenbetreiber erstellten Inhalte und Werke auf
-              diesen Seiten unterliegen dem deutschen Urheberrecht.
-              Jede Art der Verwertung außerhalb der Grenzen des Urheberrechts
-              bedarf der schriftlichen Zustimmung des jeweiligen Autors bzw.
-              Erstellers.
+              dieser Website unterliegen dem deutschen Urheberrecht. Beiträge
+              Dritter sind als solche gekennzeichnet.
             </p>
           </section>
-
         </div>
       </main>
 
       <footer className="bg-[oklch(0.15_0.02_60)] text-cream/80 py-8 text-center mt-16">
         <p className="text-sm">
-          © {new Date().getFullYear()} {RESTAURANT}
-        </p>
-
-        <p className="text-xs mt-2 text-cream/50">
-          {ADDRESS}
+          © {new Date().getFullYear()} {RESTAURANT} · {ADDRESS}
         </p>
 
         <button
@@ -179,7 +139,7 @@ export default function Impressum() {
             window.location.hash = "";
             window.scrollTo(0, 0);
           }}
-          className="text-xs text-gold hover:underline mt-3 block mx-auto"
+          className="text-xs text-gold hover:underline mt-2 block mx-auto"
         >
           ← Zurück zur Startseite
         </button>
