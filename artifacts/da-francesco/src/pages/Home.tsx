@@ -284,7 +284,7 @@ function Menu() {
               {it.nr && <span className="text-gold font-display text-sm font-semibold pt-1 w-8">{it.nr}</span>}
               <div className="flex-1 border-b border-dashed border-border pb-4">
                 <div className="flex justify-between items-baseline gap-3">
-                  <h4 className="font-display text-lg font-semibold text-forest group-hover:text-burgundy transition-colors">{it.name[lang]}</h4>
+                  <p className="font-display text-lg font-semibold text-forest group-hover:text-burgundy transition-colors">{it.name[lang]}</p>
                   <span className="font-display font-bold text-burgundy whitespace-nowrap">{it.price}</span>
                 </div>
                 {it.desc && it.desc[lang] && (
