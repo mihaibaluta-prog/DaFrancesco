@@ -8,8 +8,8 @@ import interior from "@/assets/photos/interior.jpg";
 import pasta from "@/assets/photos/pasta.jpg";
 import wine from "@/assets/photos/wine.jpg";
 import carpaccio from "@/assets/photos/carpaccio.jpeg";
-import vegetables from "@/assets/photos/vegetables.jpg";
-import antipasto from "@/assets/photos/antipasto.jpg";
+import vegetables from "@/assets/photos/vegetables.png";
+import antipasto from "@/assets/photos/antipasto.png";
 import pizzaProsciutto from "@/assets/photos/pizza-prosciutto.jpg";
 
 
