@@ -10,7 +10,7 @@ import wine from "@/assets/photos/wine.jpg";
 import carpaccio from "@/assets/photos/carpaccio.jpeg";
 import vegetables from "@/assets/photos/vegetables.png";
 import antipasto from "@/assets/photos/antipasto.png";
-import pizzaProsciutto from "@/assets/photos/pizza-prosciutto.jpg";
+import pizzaProsciutto from "@/assets/photos/pizza.jpeg";
 
 
 const PHONE = "09307440";
