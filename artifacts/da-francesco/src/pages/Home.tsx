@@ -725,7 +725,7 @@ function Reservation() {
                 <label htmlFor="reservation-time" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
                   {t("res_time")}
                 </label>
-               <select
+              <select
   id="reservation-time"
   name="time"
   disabled={timeLimits.closed}
