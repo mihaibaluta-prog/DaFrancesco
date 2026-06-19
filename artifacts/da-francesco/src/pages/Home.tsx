@@ -726,16 +726,17 @@ function Reservation() {
                   {t("res_time")}
                 </label>
                 <input
-                  id="reservation-time"
-                  name="time"
-                  type="time"
-                  min={timeLimits.min}
-                  max={timeLimits.max}
-                  disabled={timeLimits.closed}
-                  className={inputCls}
-                  value={form.time}
-                  onChange={(e) => set("time", e.target.value)}
-                />
+  id="reservation-time"
+  name="time"
+  type="time"
+  min={timeLimits.min}
+  max={timeLimits.max}
+  step={900}
+  disabled={timeLimits.closed}
+  className={inputCls}
+  value={form.time}
+  onChange={(e) => set("time", e.target.value)}
+/>
 
                 {timeLimits.closed && (
                   <p className="text-red-300 text-xs mt-2">
