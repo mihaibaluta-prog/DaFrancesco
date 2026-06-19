@@ -234,7 +234,7 @@ function WhyUs() {
   ];
   return (
     <section className="py-24 bg-forest text-cream relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(${pasta})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(${snitzel})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="gold-divider text-xl mb-3">Perché Da Francesco</div>
