@@ -735,19 +735,33 @@ function Reservation() {
 >
   <option value="">Bitte Uhrzeit wählen</option>
 
-  {Array.from({ length: 43 }, (_, i) => {
-    const totalMinutes = 11 * 60 + i * 15;
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
+  {(() => {
+    if (timeLimits.closed || !timeLimits.min || !timeLimits.max) {
+      return null;
+    }
 
-    const time = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+    const [minHour, minMinute] = timeLimits.min.split(":").map(Number);
+    const [maxHour, maxMinute] = timeLimits.max.split(":").map(Number);
 
-    return (
-      <option key={time} value={time}>
-        {time}
-      </option>
-    );
-  })}
+    const start = minHour * 60 + minMinute;
+    const end = maxHour * 60 + maxMinute;
+
+    const options = [];
+
+    for (let totalMinutes = start; totalMinutes <= end; totalMinutes += 15) {
+      const hours = Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes % 60;
+      const time = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+
+      options.push(
+        <option key={time} value={time}>
+          {time}
+        </option>
+      );
+    }
+
+    return options;
+  })()}
 </select>
                 {timeLimits.closed && (
                   <p className="text-red-300 text-xs mt-2">
