@@ -545,54 +545,74 @@ function Footer() {
 
 function Reservation() {
   const { t } = useI18n();
-  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", email: "", date: "", time: "", guests: "2", comments: "" });
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    date: "",
+    time: "",
+    guests: "2",
+    comments: "",
+  });
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle");
 
-  const set = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }));
+  const set = (k: string, v: string) =>
+    setForm((f) => ({ ...f, [k]: v }));
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+
     try {
       const res = await fetch("https://formspree.io/f/xpqegwwk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+
       setStatus(res.ok ? "ok" : "err");
     } catch {
       setStatus("err");
     }
   };
-const getTimeLimits = () => {
-  if (!form.date) {
-    return { min: "11:00", max: "21:30", closed: false };
-  }
 
-  const day = new Date(form.date).getDay();
-
-  switch (day) {
-    case 1: // Luni
-    case 2: // Marți
-      return { min: "", max: "", closed: true };
-
-    case 0: // Duminică
+  const getTimeLimits = () => {
+    if (!form.date) {
       return { min: "11:00", max: "21:30", closed: false };
+    }
 
-    case 6: // Sâmbătă
-      return { min: "14:00", max: "21:30", closed: false };
+    const day = new Date(form.date).getDay();
 
-    default: // Miercuri-Vineri
-      return { min: "16:00", max: "21:30", closed: false };
-  }
-};
+    switch (day) {
+      case 1:
+      case 2:
+        return { min: "", max: "", closed: true };
+      case 0:
+        return { min: "11:00", max: "21:30", closed: false };
+      case 6:
+        return { min: "14:00", max: "21:30", closed: false };
+      default:
+        return { min: "16:00", max: "21:30", closed: false };
+    }
+  };
 
-const timeLimits = getTimeLimits();
-  const inputCls = "w-full border border-border rounded px-4 py-3 text-sm text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-stone-400";
+  const timeLimits = getTimeLimits();
+
+  const inputCls =
+    "w-full border border-border rounded px-4 py-3 text-sm text-stone-900 bg-white focus:outline-none focus:ring-2 focus:ring-burgundy/40 placeholder:text-stone-400";
 
   return (
     <section id="reservation" className="py-24 bg-forest text-cream relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(/src/assets/photos/interior.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }} />
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `url(/src/assets/photos/interior.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
       <div className="relative max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <div className="font-script text-gold text-2xl mb-3 flex items-center justify-center gap-3">
@@ -600,8 +620,14 @@ const timeLimits = getTimeLimits();
             {t("res_kicker")}
             <span className="flex-1 max-w-[80px] h-px bg-gold opacity-60" />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-cream">{t("res_title")}</h2>
-          <p className="mt-4 text-cream/75 max-w-xl mx-auto">{t("res_subtitle")}</p>
+
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-cream">
+            {t("res_title")}
+          </h2>
+
+          <p className="mt-4 text-cream/75 max-w-xl mx-auto">
+            {t("res_subtitle")}
+          </p>
         </div>
 
         {status === "ok" ? (
@@ -610,64 +636,153 @@ const timeLimits = getTimeLimits();
             <p className="text-lg font-medium text-cream">{t("res_success")}</p>
           </div>
         ) : (
-          <form onSubmit={submit} className="bg-cream/10 backdrop-blur-sm border border-gold/20 rounded-2xl p-8 md:p-10 space-y-5">
+          <form
+            onSubmit={submit}
+            className="bg-cream/10 backdrop-blur-sm border border-gold/20 rounded-2xl p-8 md:p-10 space-y-5"
+          >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_firstname")} *</label>
-                <input required className={inputCls} value={form.firstName} onChange={e => set("firstName", e.target.value)} placeholder={t("res_firstname")} />
+                <label htmlFor="firstName" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_firstname")} *
+                </label>
+                <input
+                  id="firstName"
+                  name="firstName"
+                  required
+                  className={inputCls}
+                  value={form.firstName}
+                  onChange={(e) => set("firstName", e.target.value)}
+                  placeholder={t("res_firstname")}
+                />
               </div>
+
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_lastname")} *</label>
-                <input required className={inputCls} value={form.lastName} onChange={e => set("lastName", e.target.value)} placeholder={t("res_lastname")} />
+                <label htmlFor="lastName" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_lastname")} *
+                </label>
+                <input
+                  id="lastName"
+                  name="lastName"
+                  required
+                  className={inputCls}
+                  value={form.lastName}
+                  onChange={(e) => set("lastName", e.target.value)}
+                  placeholder={t("res_lastname")}
+                />
               </div>
             </div>
+
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_phone")} *</label>
-                <input required type="tel" className={inputCls} value={form.phone} onChange={e => set("phone", e.target.value)} placeholder="+49 9307 440" />
+                <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_phone")} *
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  required
+                  type="tel"
+                  className={inputCls}
+                  value={form.phone}
+                  onChange={(e) => set("phone", e.target.value)}
+                  placeholder="+49 9307 440"
+                />
               </div>
+
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_email")} *</label>
-                <input required type="email" className={inputCls} value={form.email} onChange={e => set("email", e.target.value)} placeholder="email@example.com" />
+                <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_email")} *
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  required
+                  type="email"
+                  className={inputCls}
+                  value={form.email}
+                  onChange={(e) => set("email", e.target.value)}
+                  placeholder="email@example.com"
+                />
               </div>
             </div>
+
             <div className="grid sm:grid-cols-3 gap-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_date")}</label>
-                <input type="date" className={inputCls} value={form.date} onChange={e => set("date", e.target.value)} />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_time")}</label>
+                <label htmlFor="reservation-date" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_date")}
+                </label>
                 <input
-  type="time"
-  min={timeLimits.min}
-  max={timeLimits.max}
-  disabled={timeLimits.closed}
-  className={inputCls}
-  value={form.time}
-  onChange={e => set("time", e.target.value)}
-/>
-
-{timeLimits.closed && (
-  <p className="text-red-300 text-xs mt-2">
-    Restaurantul este închis luni și marți.
-  </p>
-)}
+                  id="reservation-date"
+                  name="date"
+                  type="date"
+                  className={inputCls}
+                  value={form.date}
+                  onChange={(e) => set("date", e.target.value)}
+                />
               </div>
+
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_guests")}</label>
-                <select className={inputCls} value={form.guests} onChange={e => set("guests", e.target.value)}>
-                  {[1,2,3,4,5,6,7,8,9,10,11,12].map(n => <option key={n} value={n}>{n}</option>)}
+                <label htmlFor="reservation-time" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_time")}
+                </label>
+                <input
+                  id="reservation-time"
+                  name="time"
+                  type="time"
+                  min={timeLimits.min}
+                  max={timeLimits.max}
+                  disabled={timeLimits.closed}
+                  className={inputCls}
+                  value={form.time}
+                  onChange={(e) => set("time", e.target.value)}
+                />
+
+                {timeLimits.closed && (
+                  <p className="text-red-300 text-xs mt-2">
+                    Restaurantul este închis luni și marți.
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="reservation-guests" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                  {t("res_guests")}
+                </label>
+                <select
+                  id="reservation-guests"
+                  name="guests"
+                  className={inputCls}
+                  value={form.guests}
+                  onChange={(e) => set("guests", e.target.value)}
+                >
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => (
+                    <option key={n} value={n}>
+                      {n}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
+
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">{t("res_comments")}</label>
-              <textarea rows={4} className={inputCls} value={form.comments} onChange={e => set("comments", e.target.value)} placeholder={t("res_comments")} />
+              <label htmlFor="comments" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
+                {t("res_comments")}
+              </label>
+              <textarea
+                id="comments"
+                name="comments"
+                rows={4}
+                className={inputCls}
+                value={form.comments}
+                onChange={(e) => set("comments", e.target.value)}
+                placeholder={t("res_comments")}
+              />
             </div>
+
             {status === "err" && (
               <p className="text-red-300 text-sm text-center">{t("res_error")}</p>
             )}
+
             <button
               type="submit"
               disabled={status === "sending"}
