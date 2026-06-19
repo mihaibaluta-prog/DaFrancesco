@@ -139,7 +139,7 @@ function Hero() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
       </div>
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream animate-fade-up">
-        <div className="gold-divider text-2xl mb-6">Ristorante & Pizzeria</div>
+        <div className="gold-divider text-2xl mb-7">Ristorante & Pizzeria</div>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
           {t("hero_title")}
         </h1>
