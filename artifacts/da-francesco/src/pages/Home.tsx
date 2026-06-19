@@ -725,19 +725,30 @@ function Reservation() {
                 <label htmlFor="reservation-time" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
                   {t("res_time")}
                 </label>
-                <input
-                  id="reservation-time"
-                  name="time"
-                  type="time"
-                  min={timeLimits.min}
-                  max={timeLimits.max}
-                  step={900}
-                  disabled={timeLimits.closed}
-                  className={inputCls}
-                  value={form.time}
-                  onChange={(e) => set("time", e.target.value)}
-/>
+               <select
+  id="reservation-time"
+  name="time"
+  disabled={timeLimits.closed}
+  className={inputCls}
+  value={form.time}
+  onChange={(e) => set("time", e.target.value)}
+>
+  <option value="">Bitte Uhrzeit wählen</option>
 
+  {Array.from({ length: 43 }, (_, i) => {
+    const totalMinutes = 11 * 60 + i * 15;
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    const time = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+
+    return (
+      <option key={time} value={time}>
+        {time}
+      </option>
+    );
+  })}
+</select>
                 {timeLimits.closed && (
                   <p className="text-red-300 text-xs mt-2">
                     Restaurantul este închis luni și marți.
