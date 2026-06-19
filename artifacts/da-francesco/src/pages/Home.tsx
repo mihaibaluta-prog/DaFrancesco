@@ -14,7 +14,7 @@ import pizza from "@/assets/photos/pizza.jpeg";
 
 
 const PHONE = "09307440";
-const PHONE_HUMAN = "09307 440";
+const PHONE_HUMAN = "09307440";
 const ADDRESS = "Oberes Tor 14, 97237 Altertheim-Oberaltertheim";
 const MAPS_LINK = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(ADDRESS);
 const MAPS_EMBED = "https://www.google.com/maps?q=" + encodeURIComponent(ADDRESS) + "&output=embed";
@@ -139,7 +139,7 @@ function Hero() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
       </div>
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream animate-fade-up">
-        <div className="gold-divider text-2xl mb-7">Ristorante & Pizzeria</div>
+        <div className="gold-divider text-2xl mb-6 relative top-2">Ristorante & Pizzeria</div>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
           {t("hero_title")}
         </h1>
