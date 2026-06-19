@@ -154,27 +154,31 @@ function Hero() {
             ☎ {t("cta_call")}
           </a>
         </div>
-       <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
-  <a
-    href={GOOGLE_REVIEWS_LINK}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-x-8 gap-y-3 hover:scale-105 transition-transform"
-  >
-    <span className="flex items-center gap-1.5">
-      <span className="text-gold text-lg">★</span> 4.4 Google
-    </span>
-    <span>📝 212 Bewertungen</span>
-  </a>
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm md:text-base text-cream/85">
+          <a
+            href={GOOGLE_REVIEWS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-x-8 gap-y-3 hover:scale-105 transition-transform"
+          >
+            <span className="flex items-center gap-1.5">
+              <span className="text-gold text-lg">★</span> 4.4 Google
+            </span>
+            <span>📝 212 Bewertungen</span>
+          </a>
 
-  <span className="hidden md:inline">📍 {ADDRESS}</span>
+          <span className="hidden md:inline">📍 {ADDRESS}</span>
 
-  <a href={`tel:${PHONE}`} className="hover:text-gold transition-colors">
-    📞 {PHONE_HUMAN}
-  </a>
-</div>
+          <a href={`tel:${PHONE}`} className="hover:text-gold transition-colors">
+            📞 {PHONE_HUMAN}
+          </a>
+        </div>
+      </div>
+
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/60 animate-bounce">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </svg>
       </div>
     </section>
   );
