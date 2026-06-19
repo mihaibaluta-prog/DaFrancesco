@@ -10,7 +10,7 @@ import wine from "@/assets/photos/wine.jpg";
 import salat from "@/assets/photos/salat.jpeg";
 import vegetables from "@/assets/photos/vegetables.png";
 import antipasto from "@/assets/photos/antipasto.png";
-import pizzaProsciutto from "@/assets/photos/pizza.jpeg";
+import pizza from "@/assets/photos/pizza.jpeg";
 
 
 const PHONE = "09307440";
@@ -438,7 +438,7 @@ function Gallery() {
   const { t } = useI18n();
   const imgs = [
     { src: exterior, label: "Da Francesco" },
-    { src: pizzaProsciutto, label: "Pizza" },
+    { src: pizza, label: "Pizza" },
     { src: salat, label: "Salat Pollo" },
     { src: antipasto, label: "Antipasto italiano" },
     { src: vegetables, label: "Antipasto di verdure" },
