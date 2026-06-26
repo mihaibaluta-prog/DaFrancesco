@@ -570,22 +570,59 @@ function Reservation() {
     setForm((f) => ({ ...f, [k]: v }));
 
   const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
+  e.preventDefault();
+  setStatus("sending");
 
-    try {
-      const res = await fetch("https://formspree.io/f/xpqegwwk", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+  try {
+    const data = {
+      access_key: "94f9f2e9-0903-48f6-ae71-49959a579a9a",
+      subject: "Neue Reservierung - Da Francesco",
+      from_name: "Da Francesco Website",
+
+      firstName: form.firstName,
+      lastName: form.lastName,
+      phone: form.phone,
+      email: form.email,
+      date: form.date,
+      time: form.time,
+      guests: form.guests,
+      comments: form.comments,
+    };
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setStatus("ok");
+
+      // Golește formularul după trimitere
+      setForm({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        date: "",
+        time: "",
+        guests: "2",
+        comments: "",
       });
-
-      setStatus(res.ok ? "ok" : "err");
-    } catch {
+    } else {
+      console.error(result);
       setStatus("err");
     }
-  };
-
+  } catch (error) {
+    console.error(error);
+    setStatus("err");
+  }
+};
   const getTimeLimits = () => {
     if (!form.date) {
       return { min: "11:00", max: "21:30", closed: false };
