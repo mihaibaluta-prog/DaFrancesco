@@ -41,7 +41,7 @@ export default function Impressum() {
         <div className="prose prose-stone max-w-none space-y-10 text-stone-800">
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              Angaben gemäß § 5 TMG
+              Angaben gemäß § 5 DDG
             </h2>
 
             <address className="not-italic bg-stone-100 rounded-lg p-4 text-sm leading-7">
@@ -95,7 +95,7 @@ export default function Impressum() {
             </h2>
 
             <p>
-              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene
+              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene
               Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
               verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht
               verpflichtet, übermittelte oder gespeicherte fremde Informationen
