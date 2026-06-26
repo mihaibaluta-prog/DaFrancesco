@@ -35,26 +35,26 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build Da Francesco
-  run: BASE_PATH=/ PORT=3000 pnpm --filter da-francesco build
- 
-  - name: Create CNAME
-  run: echo "dafrancesco-altertheim.de" > artifacts/da-francesco/dist/public/CNAME
+        run: BASE_PATH=/ PORT=3000 pnpm --filter da-francesco build
 
-      - name: Upload Pages artifact
+      - name: Create CNAME
+        run: echo "dafrancesco-altertheim.de" > artifacts/da-francesco/dist/public/CNAME
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: artifacts/da-francesco/dist/public
 
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
 
     steps:
       - name: Deploy to GitHub Pages
