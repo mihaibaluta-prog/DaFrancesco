@@ -178,22 +178,44 @@ export default function Datenschutz() {
             </h2>
 
             <h3 className="font-semibold text-lg text-forest mt-4 mb-2">
-              6.1 Website-Hosting GitHub Pages
-            </h3>
+  6.1 Website-Hosting über GitHub Pages
+</h3>
 
-            <p>
-              Diese Website wird über <strong>GitHub Pages</strong> gehostet.
-              Beim Aufruf unserer Website können automatisch technische Daten
-              durch GitHub verarbeitet werden.
-            </p>
+<p>
+  Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt,
+  einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street,
+  San Francisco, CA 94107, USA. GitHub ist ein Unternehmen der
+  Microsoft Corporation.
+</p>
 
-            <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-              <li>IP-Adresse des anfragenden Geräts</li>
-              <li>Datum und Uhrzeit des Zugriffs</li>
-              <li>Browsertyp und Browserversion</li>
-              <li>Betriebssystem</li>
-              <li>Referrer-URL</li>
-            </ul>
+<p className="mt-3">
+  Beim Aufruf dieser Website können durch GitHub automatisch technische
+  Zugriffsdaten verarbeitet werden, insbesondere IP-Adresse, Datum und
+  Uhrzeit des Zugriffs, Browsertyp, Betriebssystem und Referrer-URL.
+</p>
+
+<p className="mt-3">
+  Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+  Unser berechtigtes Interesse liegt in der sicheren und zuverlässigen
+  Bereitstellung unserer Website.
+</p>
+
+<p className="mt-3">
+  Da GitHub beziehungsweise Microsoft Dienste mit Sitz in den USA einsetzt,
+  kann nicht ausgeschlossen werden, dass personenbezogene Daten in die USA
+  übermittelt werden. Die Übermittlung erfolgt, soweit anwendbar, auf
+  Grundlage geeigneter Garantien gemäß Art. 44 ff. DSGVO.
+</p>
+
+<h3 className="font-semibold text-lg text-forest mt-8 mb-2">
+  6.2 Lokale Einbindung von Schriftarten
+</h3>
+
+<p>
+  Auf dieser Website werden Schriftarten lokal eingebunden. Eine Verbindung
+  zu Servern von Google Fonts, insbesondere zu fonts.googleapis.com oder
+  fonts.gstatic.com, findet beim Laden der Schriftarten nicht statt.
+</p>
 
             <p className="mt-3">
               Weitere Informationen finden Sie in der{" "}
