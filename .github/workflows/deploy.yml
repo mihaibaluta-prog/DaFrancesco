@@ -37,7 +37,10 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Da Francesco
-        run: BASE_PATH=/DaFrancesco/ PORT=3000 pnpm --filter da-francesco build
+  run: BASE_PATH=/ PORT=3000 pnpm --filter da-francesco build
+ 
+  - name: Create CNAME
+  run: echo "dafrancesco-altertheim.de" > artifacts/da-francesco/dist/public/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
