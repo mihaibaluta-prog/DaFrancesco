@@ -76,29 +76,52 @@ export default function Datenschutz() {
             </address>
           </section>
 
-          <section>
-            <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              2. Erhobene Daten über das Reservierungsformular
-            </h2>
+         <section>
+  <h2 className="font-display text-2xl font-bold text-forest mb-4">
+    2. Erhobene Daten über das Reservierungsformular
+  </h2>
 
-            <p>
-              Wenn Sie über unser Online-Formular einen Tisch reservieren,
-              erheben wir folgende personenbezogene Daten:
-            </p>
+  <p>
+    Wenn Sie über unser Online-Formular einen Tisch reservieren,
+    erheben und verarbeiten wir die von Ihnen freiwillig angegebenen
+    personenbezogenen Daten, um Ihre Reservierungsanfrage zu bearbeiten.
+  </p>
 
-            <ul className="list-disc list-inside mt-3 space-y-1 ml-4">
-              <li>Vorname und Nachname</li>
-              <li>E-Mail-Adresse</li>
-              <li>Telefonnummer</li>
-              <li>Gewünschtes Reservierungsdatum und Uhrzeit</li>
-              <li>Anzahl der Personen</li>
-              <li>Kommentare und Sonderwünsche optional</li>
-            </ul>
+  <ul className="list-disc list-inside mt-3 space-y-1 ml-4">
+    <li>Vorname und Nachname</li>
+    <li>E-Mail-Adresse</li>
+    <li>Telefonnummer</li>
+    <li>Gewünschtes Reservierungsdatum und Uhrzeit</li>
+    <li>Anzahl der Personen</li>
+    <li>Kommentare und Sonderwünsche optional</li>
+  </ul>
 
-            <p className="mt-3">
-              Die Übermittlung der Daten erfolgt über den Dienst Formspree.
-            </p>
-          </section>
+  <p className="mt-3">
+    Die technische Übermittlung der Daten erfolgt über den Dienst{" "}
+    <strong>Web3Forms</strong>. Die eingegebenen Daten werden über Web3Forms
+    an unsere hinterlegte E-Mail-Adresse weitergeleitet.
+  </p>
+
+  <p className="mt-3">
+    Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO,
+    soweit dies zur Bearbeitung Ihrer Reservierungsanfrage erforderlich ist.
+    Darüber hinaus erfolgt die Verarbeitung auf Grundlage unseres berechtigten
+    Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO an einer zuverlässigen
+    Kommunikation mit unseren Gästen.
+  </p>
+
+  <p className="mt-3">
+    Weitere Informationen zum Datenschutz bei Web3Forms finden Sie unter:{" "}
+    <a
+      href="https://web3forms.com/privacy"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gold hover:underline"
+    >
+      https://web3forms.com/privacy
+    </a>
+  </p>
+</section>
 
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
