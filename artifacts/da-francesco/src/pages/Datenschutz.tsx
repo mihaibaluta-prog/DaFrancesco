@@ -214,30 +214,6 @@ export default function Datenschutz() {
               Website).
             </p>
 
-            <h3 className="font-semibold text-lg text-forest mt-6 mb-2">
-              6.2 Formularservice Formspree
-            </h3>
-
-            <p>
-              Für die Übermittlung von Reservierungsanfragen verwenden wir den
-              Dienst <strong>Formspree</strong>. Die von Ihnen eingegebenen
-              Daten werden an Formspree übertragen und dort verarbeitet, um Ihre
-              Anfrage an uns weiterzuleiten.
-            </p>
-
-            <p className="mt-3">
-              Weitere Informationen finden Sie in der{" "}
-              <a
-                href="https://formspree.io/legal/privacy-policy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-burgundy underline"
-              >
-                Datenschutzerklärung von Formspree
-              </a>
-              .
-            </p>
-
             <p className="mt-2 text-sm text-stone-600">
               Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO
               (Vertragsanbahnung).
