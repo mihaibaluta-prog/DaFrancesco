@@ -109,6 +109,11 @@ export default function Datenschutz() {
     Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO an einer zuverlässigen
     Kommunikation mit unseren Gästen.
   </p>
+           <p className="mt-3">
+  Mit dem Anbieter wurde – soweit gesetzlich erforderlich – ein Vertrag zur
+  Auftragsverarbeitung geschlossen beziehungsweise es werden ausschließlich
+  datenschutzkonforme Dienste eingesetzt.
+</p>
 
   <p className="mt-3">
     Weitere Informationen zum Datenschutz bei Web3Forms finden Sie unter:{" "}
@@ -204,7 +209,8 @@ export default function Datenschutz() {
   Da GitHub beziehungsweise Microsoft Dienste mit Sitz in den USA einsetzt,
   kann nicht ausgeschlossen werden, dass personenbezogene Daten in die USA
   übermittelt werden. Die Übermittlung erfolgt, soweit anwendbar, auf
-  Grundlage geeigneter Garantien gemäß Art. 44 ff. DSGVO.
+  Grundlage geeigneter Garantien gemäß Art. 44 ff. DSGVO, soweit eine Übermittlung
+personenbezogener Daten in Drittländer erfolgt.
 </p>
 
 <h3 className="font-semibold text-lg text-forest mt-8 mb-2">
@@ -269,6 +275,11 @@ export default function Datenschutz() {
               Anbieter: Google Ireland Limited, Gordon House, Barrow Street,
               Dublin 4, Irland.
             </p>
+            <p className="mt-3">
+  Die Nutzung von Google Maps erfolgt auf Grundlage unseres berechtigten
+  Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO, unseren Gästen eine einfache
+  Auffindbarkeit unseres Restaurants zu ermöglichen.
+</p>
 
             <p className="mt-3">
               Weitere Informationen finden Sie in der{" "}
@@ -285,8 +296,25 @@ export default function Datenschutz() {
           </section>
 
           <section>
+            <section>
+  <h2 className="font-display text-2xl font-bold text-forest mb-4">
+    9. SSL- bzw. TLS-Verschlüsselung
+  </h2>
+
+  <p>
+    Diese Website verwendet aus Sicherheitsgründen eine SSL- bzw.
+    TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem
+    Schlosssymbol in der Adresszeile Ihres Browsers sowie daran, dass die
+    Adresse mit <strong>https://</strong> beginnt.
+  </p>
+
+  <p className="mt-3">
+    Dadurch können Daten, die Sie über unser Reservierungsformular an uns
+    übermitteln, nicht von unbefugten Dritten mitgelesen werden.
+  </p>
+</section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              9. Ihre Rechte nach DSGVO
+              10. Ihre Rechte nach DSGVO
             </h2>
 
             <p>
@@ -329,6 +357,14 @@ export default function Datenschutz() {
                   verlangen.
                 </span>
               </li>
+              <li className="flex gap-3">
+  <span className="text-burgundy font-bold min-w-[24px]">►</span>
+  <span>
+    <strong>Widerruf einer Einwilligung:</strong>
+    Eine bereits erteilte Einwilligung können Sie jederzeit mit Wirkung für
+    die Zukunft widerrufen.
+  </span>
+</li>
 
               <li className="flex gap-3">
                 <span className="text-burgundy font-bold min-w-[24px]">►</span>
@@ -369,7 +405,7 @@ export default function Datenschutz() {
 
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              10. Kontakt für Datenschutzanfragen
+              11. Kontakt für Datenschutzanfragen
             </h2>
 
             <p>
@@ -395,7 +431,7 @@ export default function Datenschutz() {
 
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              11. Keine Cookies, kein Tracking
+              12. Keine Cookies, kein Tracking
             </h2>
 
             <p>
@@ -408,14 +444,14 @@ export default function Datenschutz() {
 
           <section>
             <h2 className="font-display text-2xl font-bold text-forest mb-4">
-              12. Aktualität dieser Datenschutzerklärung
+              13. Aktualität dieser Datenschutzerklärung
             </h2>
 
             <p>
               Diese Datenschutzerklärung ist aktuell gültig und hat den Stand{" "}
-              {TODAY}. Durch die Weiterentwicklung unserer Website oder aufgrund
-              geänderter gesetzlicher Vorgaben kann es notwendig werden, diese
-              Datenschutzerklärung zu ändern.
+              {TODAY}. Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn dies aufgrund
+gesetzlicher Änderungen oder technischer Weiterentwicklungen unserer Website
+erforderlich wird.
             </p>
           </section>
         </div>
