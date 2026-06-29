@@ -811,7 +811,7 @@ function Reservation() {
 </select>
                 {timeLimits.closed && (
                   <p className="text-red-300 text-xs mt-2">
-                    Restaurantul este închis luni și marți.
+                    Unser Restaurant ist montags und dienstags geschlossen.
                   </p>
                 )}
               </div>
