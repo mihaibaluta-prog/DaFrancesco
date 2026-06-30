@@ -820,19 +820,17 @@ function Reservation() {
                 <label htmlFor="reservation-guests" className="block text-xs font-semibold uppercase tracking-widest text-gold mb-2">
                   {t("res_guests")}
                 </label>
-                <select
-                  id="reservation-guests"
-                  name="guests"
-                  className={inputCls}
-                  value={form.guests}
-                  onChange={(e) => set("guests", e.target.value)}
-                >
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => (
-                    <option key={n} value={n}>
-                      {n}
-                    </option>
-                  ))}
-                </select>
+                <input
+  id="reservation-guests"
+  name="guests"
+  type="number"
+  min="1"
+  max="100"
+  className={inputCls}
+  value={form.guests}
+  onChange={(e) => set("guests", e.target.value)}
+  placeholder="Anzahl der Personen"
+/>
               </div>
             </div>
 
