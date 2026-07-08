@@ -139,7 +139,7 @@ function Hero() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
       </div>
      {/* Vacation Notice */}
-<div className="absolute top-20 md:top-20 left-0 right-0 z-20 px-4">
+<div className="absolute top-16 md:top-16 left-0 right-0 z-20 px-4">
   <div className="mx-auto max-w-4xl rounded-lg border border-gold/50 bg-[#2b1a12]/90 px-4 py-2 text-center text-cream shadow-xl backdrop-blur-sm">
     <p className="text-sm md:text-base font-semibold text-gold">
       Betriebsurlaub
