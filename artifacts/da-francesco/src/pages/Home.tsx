@@ -872,27 +872,27 @@ function Home() {
     <div className="min-h-screen bg-cream">
       <Nav />
       <main>
-         {/* Vacation Notice */}
-  <section className="bg-[#2b1a12] border-y border-gold/50 text-cream shadow-md">
-    <div className="mx-auto max-w-6xl px-4 py-5 text-center">
-      <p className="text-lg md:text-xl font-semibold text-gold">
-        Betriebsurlaub
-      </p>
+       {/* Vacation Notice */}
+<section className="mt-24 md:mt-28 bg-[#2b1a12] border-y border-gold/50 text-cream shadow-md">
+  <div className="mx-auto max-w-6xl px-4 py-4 text-center">
+    <p className="text-lg md:text-xl font-semibold text-gold">
+      Betriebsurlaub
+    </p>
 
-      <p className="mt-2 text-sm md:text-base text-cream/90">
-        Liebe Gäste, wir machen vom{" "}
-        <span className="font-semibold text-gold">03.08.2026</span> bis{" "}
-        <span className="font-semibold text-gold">27.08.2026</span> Urlaub.
-        Ab dem{" "}
-        <span className="font-semibold text-gold">28.08.2026</span> sind wir
-        wieder wie gewohnt für Sie da.
-      </p>
+    <p className="mt-2 text-sm md:text-base text-cream/90">
+      Liebe Gäste, wir machen vom{" "}
+      <span className="font-semibold text-gold">03.08.2026</span> bis{" "}
+      <span className="font-semibold text-gold">27.08.2026</span> Urlaub.
+      Ab dem{" "}
+      <span className="font-semibold text-gold">28.08.2026</span> sind wir
+      wieder wie gewohnt für Sie da.
+    </p>
 
-      <p className="mt-2 text-xs md:text-sm text-cream/70">
-        Vielen Dank für Ihr Verständnis.
-      </p>
-    </div>
-  </section>
+    <p className="mt-2 text-xs md:text-sm text-cream/70">
+      Vielen Dank für Ihr Verständnis.
+    </p>
+  </div>
+</section>
         <Hero />
         <About />
         <WhyUs />
