@@ -129,7 +129,54 @@ function Nav() {
     </header>
   );
 }
+function VacationPopup() {
+  const [isOpen, setIsOpen] = useState(true);
 
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4">
+      <div className="relative w-full max-w-lg rounded-2xl border border-gold/60 bg-[#2b1a12] p-6 text-center text-cream shadow-2xl">
+        <button
+          type="button"
+          onClick={() => setIsOpen(false)}
+          className="absolute right-4 top-3 text-cream/70 hover:text-gold text-2xl leading-none"
+          aria-label="Hinweis schließen"
+        >
+          ×
+        </button>
+
+        <p className="text-2xl font-semibold text-gold mb-3">
+          Betriebsurlaub
+        </p>
+
+        <p className="text-sm md:text-base leading-relaxed text-cream/90">
+          Liebe Gäste, wir machen vom{" "}
+          <span className="font-semibold text-gold">03.08.2026</span> bis{" "}
+          <span className="font-semibold text-gold">27.08.2026</span> Urlaub.
+        </p>
+
+        <p className="mt-3 text-sm md:text-base leading-relaxed text-cream/90">
+          Ab dem{" "}
+          <span className="font-semibold text-gold">28.08.2026</span> sind wir
+          wieder wie gewohnt für Sie da.
+        </p>
+
+        <p className="mt-4 text-xs md:text-sm text-cream/70">
+          Vielen Dank für Ihr Verständnis.
+        </p>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen(false)}
+          className="mt-6 rounded bg-burgundy px-6 py-3 text-sm font-semibold text-cream transition-all hover:bg-burgundy/90 hover:scale-105"
+        >
+          Verstanden
+        </button>
+      </div>
+    </div>
+  );
+}
 function Hero() {
   const { t } = useI18n();
   return (
@@ -138,17 +185,6 @@ function Hero() {
         <img src={heroPizza} alt="Authentische italienische Pizza" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
       </div>
- {/* Vacation Notice */}
-<div className="absolute top-[72px] md:top-[76px] left-0 right-0 z-20 px-4">
-  <div className="mx-auto max-w-4xl rounded-md border border-gold/50 bg-[#2b1a12]/90 px-4 py-1.5 text-center text-cream shadow-xl backdrop-blur-sm">
-    <p className="text-[11px] md:text-sm text-cream/90 leading-tight">
-      <span className="font-semibold text-gold">Betriebsurlaub:</span>{" "}
-      Vom <span className="font-semibold text-gold">03.08.2026</span> bis{" "}
-      <span className="font-semibold text-gold">27.08.2026</span> geschlossen.
-      Ab <span className="font-semibold text-gold">28.08.2026</span> wieder geöffnet.
-    </p>
-  </div>
-</div>
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream animate-fade-up">
         <div className="gold-divider text-2xl mb-6 relative top-2">Ristorante & Pizzeria</div>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
@@ -882,6 +918,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-cream">
       <Nav />
+      <VacationPopup />
       <main>
         <Hero />
         <About />
