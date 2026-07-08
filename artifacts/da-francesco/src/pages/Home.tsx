@@ -138,10 +138,10 @@ function Hero() {
         <img src={heroPizza} alt="Authentische italienische Pizza" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.45) 50%, rgba(20,20,20,0.8) 100%)" }} />
       </div>
-      {/* Vacation Notice */}
-<div className="absolute top-24 left-0 right-0 z-20 px-4">
-  <div className="mx-auto max-w-5xl rounded-xl border border-gold/50 bg-[#2b1a12]/90 px-4 py-3 text-center text-cream shadow-xl backdrop-blur-sm">
-    <p className="text-base md:text-lg font-semibold text-gold">
+     {/* Vacation Notice */}
+<div className="absolute top-20 md:top-20 left-0 right-0 z-20 px-4">
+  <div className="mx-auto max-w-4xl rounded-lg border border-gold/50 bg-[#2b1a12]/90 px-4 py-2 text-center text-cream shadow-xl backdrop-blur-sm">
+    <p className="text-sm md:text-base font-semibold text-gold">
       Betriebsurlaub
     </p>
 
@@ -154,7 +154,7 @@ function Hero() {
       wieder wie gewohnt für Sie da.
     </p>
 
-    <p className="mt-1 text-xs text-cream/70">
+    <p className="mt-1 text-[11px] md:text-xs text-cream/70">
       Vielen Dank für Ihr Verständnis.
     </p>
   </div>
